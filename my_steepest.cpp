@@ -12,7 +12,7 @@ int main()
     string in_name = "";
     cout<<"input a file"<<endl;
     cin>>in_name;
-    input.open(in_name);
+    input.open(in_name+".txt");
     if(!input.is_open())
     {
         cout<<"No such file!"<<endl;
@@ -54,7 +54,7 @@ int main()
     int x_index = (x_st-xmin)/xbsize;
     int y_index = (y_st-ymin)/ybsize;
     double PMF_st = PMF[x_index][y_index];
-    ofstream output(in_name+"result.txt");
+    ofstream output(in_name+"_result.txt");
     vector<pair<int,int>> x_y;
     x_y.push_back(make_pair(x_index,y_index));
     cout<<xmin+x_index*xbsize<<" "<<ymin+y_index*ybsize<<" "<<PMF_st<<endl;
